@@ -167,20 +167,9 @@ A native Raycast extension that:
 ### 4.1 Primary User Stories
 
 1. **As a designer**, I want to quickly remove backgrounds from product photos so I can create clean compositions without leaving my workflow.
-
 2. **As a marketer**, I want to process profile images for social media so I can maintain brand consistency across platforms.
-
 3. **As a developer**, I want to integrate background removal into my automation scripts so I can batch process images efficiently.
-
 4. **As a power user**, I want keyboard shortcuts for common actions so I can work faster without using the mouse.
-
-### 4.2 Secondary User Stories
-
-1. **As a user**, I want clear error messages when something goes wrong so I can understand and fix issues.
-
-2. **As a user**, I want instant visual feedback when selecting images so I know the extension is working.
-
-3. **As a user**, I want multiple output options so I can use processed images in different contexts.
 
 ## 5. Design Specifications
 
@@ -286,8 +275,3 @@ Command (Main Component)
 - Caching for processed images
 - Offline processing capabilities
 - Advanced error recovery
-
-## 10. Conclusion
-
-This PRD outlines a focused, user-centric extension that addresses a common need in creative workflows. By leveraging AI capabilities and Raycast's native integration, the extension provides a seamless experience for background removal while maintaining high standards for performance, security, and usability.</content>
-<parameter name="filePath">/Users/nathanthomassin/devs-local/remove-background---replicate-api/project.md
