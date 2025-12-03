@@ -10,6 +10,7 @@ import {
   showToast,
   Toast,
 } from "@raycast/api";
+import { showFailureToast } from "@raycast/utils";
 import { useEffect, useState } from "react";
 import fs from "fs";
 import path from "path";
@@ -86,7 +87,7 @@ export default function Command() {
       }
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
-      showToast({ style: Toast.Style.Failure, title: "Processing error", message });
+      showFailureToast(message);
     }
   }
 
@@ -132,7 +133,7 @@ export default function Command() {
   }
 
   return (
-    <Grid columns={2} aspectRatio="4/3">
+    <Grid columns={2} aspectRatio="4/3" isLoading={!processedImage}>
       <Grid.Item title="Original" content={originalImage} />
       <Grid.Item
         title={processedImage ? "Processed" : "Processing..."}
@@ -153,8 +154,8 @@ export default function Command() {
                     const mimeType = response.headers.get("content-type") || "image/png";
                     const dataURL = `data:${mimeType};base64,${base64}`;
                     await Clipboard.copy(dataURL);
-                  } catch (error) {
-                    showToast({ style: Toast.Style.Failure, title: "Failed to copy image", message: String(error) });
+                  } catch {
+                    showFailureToast("Failed to copy image");
                   }
                 }}
                 shortcut={{ modifiers: ["cmd"], key: "c" }}
